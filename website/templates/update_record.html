@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {%block content%}
+
+
+<div class="col-md-6 offset-md-3">
+    <h1>Update record</h1><br/>
+    <form method="POST" action="{% url 'update_record' record.id %}">
+        {% csrf_token %}
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="first_name" placeholder="First Name" value="{{record.first_name}}" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="last_name" placeholder="Last Name" value="{{record.last_name}}" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="email" placeholder="Email" value="{{record.email}}" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="phone" placeholder="Phone" value="{{record.phone}}" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="address" placeholder="Address" value="{{record.address}}" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="city" placeholder="City" value="{{record.city}}" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="state" placeholder="State" value="{{record.state}}" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="zipcode" placeholder="Zip code" value="{{record.zipcode}}" required
+            />
+          </div>
+          <a type="submit" class="btn btn-danger" href='{% url 'home'%}' >Cancel</a> 
+          
+          <button type="submit" class="btn btn-secondary">Update record</button> 
+      </form>
+</div>
+{%endblock%}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {%block content%}
+
+
+<div class="col-md-6 offset-md-3">
+    <h1>Add record</h1><br/>
+    <form method="POST" action="{% url 'add_record' %}">
+        {% csrf_token %}
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="first_name" placeholder="First Name" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="last_name" placeholder="Last Name" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="email" placeholder="Email" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="phone" placeholder="Phone" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="address" placeholder="Address" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="city" placeholder="City" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="state" placeholder="State" required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text" class="form-control" name="zipcode" placeholder="Zip code" required
+            />
+          </div>
+          <a type="submit" class="btn btn-danger" href='{% url 'home'%}' >Cancel</a> 
+          
+          <button type="submit" class="btn btn-secondary">Add record</button> 
+      </form>
+</div>
+{%endblock%}
